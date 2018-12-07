@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className="App container">
         <div className="row">
-          <div className="col">
+          <div className="col-12">
             <SimpleHeader/>
             <List/>
             <Footer/>

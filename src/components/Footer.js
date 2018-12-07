@@ -4,7 +4,7 @@ const Footer = () => {
     return(
         <>
         <div className="col">
-            <div className="row">
+            <div className="row Footer">
                 <div className="col text-left">
                     <p>Created by s950ms20</p>
                 </div>

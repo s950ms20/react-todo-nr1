@@ -10,12 +10,45 @@ body {
 
 .SimpleHeader {
   margin: 20px;
+  margin-bottom: 50px;
   padding: 5px;
 }
 
 .SimpleTask {
-  margin: 15px auto;
-  padding: 5px;
-  border: 1px solid white;
-  box-shadow: 2px 1px 5px white;
+  margin: 15px;
+  padding: 15px;
+}
+
+.box {
+  margin: 15px;
+  padding: 25px;
+}
+
+.Footer{
+  margin: 15px;
+  padding: 15px;
+  border-top: 2px dashed white;
+}
+
+.List {
+  margin-bottom: 50px;
+}
+
+.buttonText {
+  font-size: 80%;
+  font-style: oblique ;
+  margin: 0px;
+  padding: 0px;
+}
+
+.btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.nameField {
+  border: 1px solid darkslategray;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 15px;
 }
