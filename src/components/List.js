@@ -27,9 +27,14 @@ class List extends Component {
         editId: ''
     }
 
-    handleChange(event) {
+    newTaskHandler = (event) => {
         this.setState({
-            newTask: event.target.value,
+            newTask: event.target.value
+        })
+    }
+
+    editNameChangeHandler = (event) => {
+        this.setState({
             editName: event.target.value
         })
     }
@@ -71,7 +76,7 @@ class List extends Component {
         })
     }
 
-    cancelEditMode(){
+    cancelEditMode() {
         this.setState({
             editMode: false
         })
@@ -97,44 +102,44 @@ class List extends Component {
         ListOfTasks[actualPosition].name = this.state.editName;
 
         this.setState({
-           ListOfTasks: ListOfTasks,
-           editId: '',
-           editName: '',
-           newTask: '',
-           editMode: false
+            ListOfTasks: ListOfTasks,
+            editId: '',
+            editName: '',
+            newTask: '',
+            editMode: false
         })
     }
 
     render() {
-        return ( <>
+        return ( < >
             <div className = "col List" >
             <div className = "col mx-auto" >
             <AddTask addTask = {this.addNewTask}
             name = {this.state.newTask}
             newStatus = {this.state.newStatus}
-            changed = {this.handleChange.bind(this)}
+            changed = {this.newTaskHandler.bind(this)}
             editMode = {this.state.editMode}
-            /> </div >
-            <div className = "col mx-auto" > {this.state.ListOfTasks.map((task, index) => {
+            />
+            </div >
+            <div className = "col mx-auto" > {
+                this.state.ListOfTasks.map((task, index) => {
                     return <SimpleTask
-                    name = {task.name}
-                    status = {task.status}
-                    key = {task.id}
-                    id = {task.id}
-                    edit = {()=>{this.editModeHandler(task.id)}}
-                    del = {()=>{this.deleteTask(task.id)}}
-                    changeStatus = {()=>this.changeStatus(task.id)}
-                    editMode = {this.state.editMode}
-                    changeName = {()=>{this.changeNameHandler()}}
-                    changed = {this.handleChange.bind(this)}
-                    editName = {this.state.editName}
-                    editId = {this.state.editId}
-                    cancel = {()=>{this.cancelEditMode()}}
-                    >
-                    </SimpleTask>
+                            name = {task.name}
+                            status = {task.status}
+                            key = {task.id}
+                            id = {task.id}
+                            edit = {() => {this.editModeHandler(task.id)}}
+                            del = {() => {this.deleteTask(task.id)}}
+                            changeStatus = {() => this.changeStatus(task.id)}
+                            editMode = {this.state.editMode}
+                            changeName = {() => {this.changeNameHandler()}}
+                            changed = {this.editNameChangeHandler.bind(this)}
+                            editName = {this.state.editName}
+                            editId = {this.state.editId}
+                            cancel = {() => {this.cancelEditMode()}}>
+                            </SimpleTask>
                 })
-            }
-            </div>
+            } </div>
             </div >
             </>
         )
@@ -158,6 +163,3 @@ List.propTypes = {
 }
 
 export default List;
-
-
-//test
