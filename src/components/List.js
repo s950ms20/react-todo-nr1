@@ -76,7 +76,7 @@ class List extends Component {
         })
     }
 
-    cancelEditMode() {
+    cancelEditMode = () => {
         this.setState({
             editMode: false
         })
