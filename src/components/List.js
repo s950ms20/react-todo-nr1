@@ -114,7 +114,8 @@ class List extends Component {
         return ( < >
             <div className = "col List" >
             <div className = "col mx-auto" >
-            <AddTask addTask = {this.addNewTask}
+            <AddTask
+            addTask = {this.addNewTask}
             name = {this.state.newTask}
             newStatus = {this.state.newStatus}
             changed = {this.newTaskHandler.bind(this)}
