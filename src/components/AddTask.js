@@ -1,9 +1,14 @@
 import React from 'react';
 
+//const AddTask = ({editMode}) => {    <- tutaj też możesz zrobić destrukturyzacje.
 const AddTask = (props) => {
+        // const { editMode } = this.props;    <- destrukturyzacja - rób tak, tak jest pro i możesz je wywołać po przecinku.
         const editMode = props.editMode;
         let addTaskField = null;
 
+        // nie róbmy ifologii - 
+
+        // return editMode ? null : <> tutaj zwracasz cały komponent </>
         if (!editMode) {
                 addTaskField = <>
                 <div className="col">
